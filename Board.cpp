@@ -78,12 +78,9 @@ namespace ariel{
         return ans;
     }
     void Board::show(){
-
-
-    
-            for (unsigned int i = maxTop; i <=minBottom; i++)
+            for (unsigned int i = maxTop-1; i <=minBottom; i++)
             {
-                for (size_t j = maxLeft; j <minRight ; j++)
+                for (size_t j = maxLeft-1; j <=minRight+1 ; j++)
                 {
                 if(board.find(i)==board.end()||board.empty()||board[i].empty()||board[i].find(j) == board[i].end()){
                 cout<<'_';
@@ -91,24 +88,12 @@ namespace ariel{
                 else{
                 cout<<board[i][j];
                 }
-          }
+                }
             cout<<"\n";
-
+            }       
+    }
 }
-    }
-    }
 
-
-    //     unsigned int t = maxLeft-minRight;
-    //     for (size_t i = maxTop; i <= minBottom; i++)
-    //     {
-    //     string temp = read(i,maxLeft,Direction::Horizontal,t);
-    //     //cout<<maxTop<<endl;
-    //     //cout<<minBottom<<endl;
-    //     cout<<maxLeft<<endl;
-    //     cout<<minRight<<endl;
-    //    // cout<<i<<endl;
-    //     // cout<<temp<<endl;
 
         
         
