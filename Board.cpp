@@ -15,7 +15,6 @@ namespace ariel{
         }
         if(Dir==Direction::Vertical&&raw+nummOfChar-1>minBottom){
             minBottom=raw+nummOfChar-1;
-            cout<<minBottom<<endl;
         }
         if(raw>minBottom){
             minBottom=raw;
@@ -81,10 +80,6 @@ namespace ariel{
         return ans;
     }
     void Board::show(){
-        // cout<<maxTop<<endl;
-        // cout<<minBottom<<endl;
-        // cout<<maxLeft<<endl;
-        // cout<<minRight<<endl;
             for (unsigned int i = maxTop; i <=minBottom; i++)
             {
                 for (unsigned int j = maxLeft; j <=minRight ; j++)
