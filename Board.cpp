@@ -10,15 +10,18 @@ namespace ariel{
         maxLeft = maxTop = __INT_MAX__;
     };
         void Board::setForPost(unsigned int raw,unsigned int cul,Direction Dir, unsigned int nummOfChar){ 
-        if(Dir==Direction::Horizontal&&cul+nummOfChar>minRight){
-            minRight = cul+nummOfChar;
+        if(cul+nummOfChar-1>minRight){
+            minRight = cul+nummOfChar-1;
         }
-        else if(Dir==Direction::Vertical&&raw+nummOfChar>minBottom){
-            minBottom=raw+nummOfChar;
+        if(Dir==Direction::Vertical&&raw+nummOfChar-1>minBottom){
+            minBottom=raw+nummOfChar-1;
+            cout<<minBottom<<endl;
+        }
+        if(raw>minBottom){
+            minBottom=raw;
         }
         if (cul<maxLeft){
             maxLeft = cul;
-
         }
         if (raw<maxTop){
             maxTop = raw;
@@ -78,15 +81,20 @@ namespace ariel{
         return ans;
     }
     void Board::show(){
-            for (unsigned int i = maxTop-1; i <=minBottom; i++)
+        // cout<<maxTop<<endl;
+        // cout<<minBottom<<endl;
+        // cout<<maxLeft<<endl;
+        // cout<<minRight<<endl;
+            for (unsigned int i = maxTop; i <=minBottom; i++)
             {
-                for (size_t j = maxLeft-1; j <=minRight+1 ; j++)
+                for (unsigned int j = maxLeft; j <=minRight ; j++)
                 {
                 if(board.find(i)==board.end()||board.empty()||board[i].empty()||board[i].find(j) == board[i].end()){
                 cout<<'_';
                 }
                 else{
                 cout<<board[i][j];
+                
                 }
                 }
             cout<<"\n";
