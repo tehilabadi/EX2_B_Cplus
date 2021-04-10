@@ -14,9 +14,9 @@ namespace ariel{
     unordered_map<unsigned int, unordered_map<unsigned int, char>> board;  
     Board();
     void setForPost(unsigned int raw,unsigned int cul,Direction Dir,unsigned int nummOfChar);
-    void post(unsigned int raw, unsigned int cul, ariel::Direction Dir, string post);
-    string read(unsigned int raw, unsigned int cul, ariel::Direction Dir,unsigned int numOfChar );
-    string read(unsigned int raw, unsigned int cul, ariel::Direction Dir,int numOfChar );
+    void post(unsigned int raw, unsigned int cul, Direction Dir, string post);
+    string read(unsigned int raw, unsigned int cul, Direction Dir,unsigned int numOfChar );
+    string read(unsigned int raw, unsigned int cul, Direction Dir,int numOfChar );
 
     void show();
     };
